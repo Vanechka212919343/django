@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+create post
+{% end block %}
+
+{% block content %}
+<div class="container">
+    <h1>Create post!</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="On1One" class="form-control">
+        <br>
+        <textarea placeholder="Named" class="form-control"></textarea>
+        <br>
+        <button type="sumbit" class="btn btn-succes">Добавить</button>
+    </form>
+</div>
+{% end block %}
