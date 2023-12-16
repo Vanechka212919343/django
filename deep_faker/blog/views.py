@@ -1,11 +1,14 @@
 from cgitb import html
-from django.shortcuts import render
-from deep_faker.blog.forms import PostForm
-
-from deep_faker.blog.models import Post
+from django.shortcuts import render, redirect
+from blog.forms import PostForm
+from blog.models import Post
 
 def home(request):
-    return render(request, 'home.html')
+    posts = Post.objects.all()
+    return render(request, 'home.html',{
+        'posts': posts,
+        'title': 'Главная страница',
+    })
 
 
 def about(request):
