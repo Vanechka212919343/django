@@ -1,8 +1,10 @@
+from deep_faker.blog.views import home , about , create
 from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('home', views.home),
-    path('about', views.about),
-    path('create', views.about)
+    path('home', home),
+    path('about', about),
+    path('create', create)
+    
 ]
